@@ -45,6 +45,7 @@ template<class V, class L>
 public:
   using engine_type               = engine_tensor_dynamic<V,L>;
   using self_type                 = tensor_core<engine_type>;
+  using parent_type               = self_type;
 
   template<class derived_type>
   using tensor_expression_type    = detail::tensor_expression<self_type,derived_type>;
@@ -210,7 +211,7 @@ public:
      * @note extents are automatically extracted from the temporary matrix
      *
      * @param expr matrix expression
-     */    
+     */
   template<class D>
   // NOLINTNEXTLINE(hicpp-explicit-conversions)
   inline tensor_core (const matrix_expression_type<D> &expr)
@@ -226,7 +227,7 @@ public:
      * @note extents are automatically extracted from the temporary matrix
      *
      * @param expr vector expression
-     */    
+     */
   template<class D>
   // NOLINTNEXTLINE(hicpp-explicit-conversions)
   inline tensor_core (const vector_expression_type<D> &expr)
@@ -463,4 +464,3 @@ using tensor_dynamic = tensor_core<tensor_engine<extents<>, L, std::vector<V>>>;
 
 
 #endif
-
