@@ -18,10 +18,10 @@ template <class T>
 struct subtensor_engine
 {
 	using parent_type = typename T::parent_type;
-    using engine_type = typename parent_type::engine_type; // reference to the parent engine
-    using extents_type = typename engine_type::extents_type; // reference to the parent extents
-    using layout_type = typename engine_type::layout_type; // reference to the parent layout
-    using container_type = typename engine_type::container_type; // reference to the parent container
+	using engine_type = typename parent_type::engine_type; // reference to the parent engine
+	using extents_type = typename engine_type::extents_type; // reference to the parent extents
+	using layout_type = typename engine_type::layout_type; // reference to the parent layout
+	using container_type = typename engine_type::container_type; // reference to the parent container
 	using span_type = span<>;
 };
 
