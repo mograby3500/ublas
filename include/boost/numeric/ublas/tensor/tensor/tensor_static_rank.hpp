@@ -46,7 +46,6 @@ template<class V, class L, std::size_t N>
 public:
   using engine_type               = engine_tensor_static_rank<V,L,N>;
   using self_type                 = tensor_core<engine_type>;
-  using parent_type               = self_type;
 
   template<class derived_type>
   using tensor_expression_type    = detail::tensor_expression<self_type,derived_type>;

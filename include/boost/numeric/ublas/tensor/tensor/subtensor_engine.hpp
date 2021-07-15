@@ -9,7 +9,6 @@
 #ifndef BOOST_UBLAS_SUBTENSOR_ENGINE_HPP
 #define BOOST_UBLAS_SUBTENSOR_ENGINE_HPP
 
-#include "../span.hpp"
 
 namespace boost::numeric::ublas
 {
@@ -17,12 +16,10 @@ namespace boost::numeric::ublas
 template <class T>
 struct subtensor_engine
 {
-	using parent_type = typename T::parent_type;
-	using engine_type = typename parent_type::engine_type; // reference to the parent engine
-	using extents_type = typename engine_type::extents_type; // reference to the parent extents
-	using layout_type = typename engine_type::layout_type; // reference to the parent layout
-	using container_type = typename engine_type::container_type; // reference to the parent container
-	using span_type = span<>;
+	using engine_type = typename T::engine_type; // reference to the parent engine
+	using extents_type = typename T::extents_type; // reference to the parent extents
+	using layout_type = typename T::layout_type; // reference to the parent layout
+	using container_type = typename T::container_type; // reference to the parent container
 };
 
 } // namespace boost::numeric::ublas

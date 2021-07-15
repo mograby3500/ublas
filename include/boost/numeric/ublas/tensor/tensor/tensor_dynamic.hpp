@@ -45,7 +45,6 @@ template<class V, class L>
 public:
   using engine_type               = engine_tensor_dynamic<V,L>;
   using self_type                 = tensor_core<engine_type>;
-  using parent_type               = self_type;
 
   template<class derived_type>
   using tensor_expression_type    = detail::tensor_expression<self_type,derived_type>;
