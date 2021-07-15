@@ -22,7 +22,6 @@ struct subtensor_engine
 	using extents_type = typename engine_type::extents_type; // reference to the parent extents
 	using layout_type = typename engine_type::layout_type; // reference to the parent layout
 	using container_type = typename engine_type::container_type; // reference to the parent container
-	using span_type = span<>;
 };
 
 } // namespace boost::numeric::ublas
