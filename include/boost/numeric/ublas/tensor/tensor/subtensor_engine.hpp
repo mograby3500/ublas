@@ -17,10 +17,9 @@ namespace boost::numeric::ublas
 template <class E>
 struct subtensor_engine
 {
-	using engine_type = typename E::engine_type; // reference to the parent engine
-	using extents_type = typename engine_type::extents_type; // reference to the parent extents
-	using layout_type = typename engine_type::layout_type; // reference to the parent layout
-	using container_type = typename engine_type::container_type; // reference to the parent container
+	using extents_type = typename E::extents_type; // reference to the parent extents
+	using layout_type = typename E::layout_type; // reference to the parent layout
+	using container_type = typename E::container_type; // reference to the parent container
 };
 
 } // namespace boost::numeric::ublas

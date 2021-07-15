@@ -18,7 +18,6 @@ namespace boost::numeric::ublas{
 template<typename E, typename L, typename C>
 struct tensor_engine
 {
-  using engine_type      = tensor_engine<E,L,C>;
   using extents_type 	 = E;
   using layout_type 	 = L;
   using container_type   = C;

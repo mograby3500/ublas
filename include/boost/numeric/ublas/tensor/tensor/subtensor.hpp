@@ -37,20 +37,18 @@ class tensor_core<subtensor_engine<E>>
 public:
 	using engine_type = subtensor_engine<E>;
 	using self_type   = tensor_core<engine_type>;
-	using parent_type = typename engine_type::engine_type;
 
 	template <class derived_type>
-	using tensor_expression_type =
-		detail::tensor_expression<self_type, derived_type>;
+	using tensor_expression_type = detail::tensor_expression<self_type, derived_type>;
 
 	template <typename container> struct subtensor_iterator {
 	};
 
 	static constexpr bool is_const = std::is_const<std::remove_reference_t<E>>::value;
 
-	using container_type = typename parent_type::container_type;
-	using layout_type    = typename parent_type::layout_type;
-	using extents_type   = typename parent_type::extents_type;
+	using container_type = typename engine_type::container_type;
+	using layout_type    = typename engine_type::layout_type;
+	using extents_type   = typename engine_type::extents_type;
 	using strides_type   = typename extents_type::base_type;
 
 	using container_traits_type = container_traits<container_type>;
